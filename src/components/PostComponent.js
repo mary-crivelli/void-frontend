@@ -7,14 +7,6 @@ class PostComponent extends React.Component {
                 <h1>Post title</h1>
                 <h3>@username</h3>
                 <p>Post body</p>
-
-                <h1>Post title</h1>
-                <h3>@username</h3>
-                <p>Post body</p>
-
-                <h1>Post title</h1>
-                <h3>@username</h3>
-                <p>Post body</p>
             </div>
         )
     }
