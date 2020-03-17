@@ -11,7 +11,7 @@ class MainContainer extends React.Component {
 
 
     // render header always
-    // loginformcomponent decides whether or not it will be shown
+    // newpostformcomponent decides whether or not it will be shown
     // render dashboard container OR user profile container based on state
     // render footer always
 
@@ -20,13 +20,11 @@ class MainContainer extends React.Component {
             <div>
                 {!this.state.loggedIn ? <LoginFormComponent/> : 
                 <div>
-                    <h2>Either posts or user profile</h2>
                     <NewPostFormComponent />
                     <PostsContainer />
                 </div>}
             </div>
-        )
-    }
+        )}
 
 }
 
