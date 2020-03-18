@@ -1,13 +1,15 @@
 import React from 'react';
+import PostsContainer from './PostsContainer';
+import NewPostFormComponent from './../components/NewPostFormComponent';
+
 
 class DashboardContainer extends React.Component {
 
     render(){
         return(
             <div>
-                <h3>New Post</h3>
-                <h3>Posts Container</h3>
-
+                <NewPostFormComponent />
+                <PostsContainer />
             </div>
         )
     }

@@ -1,14 +1,12 @@
 import React from 'react';
-import PostsContainer from './PostsContainer';
-import NewPostFormComponent from './../components/NewPostFormComponent';
 import LoginFormComponent from '../components/LoginFormComponent';
+import DashboardContainer from './DashboardContainer';
 
 class MainContainer extends React.Component {
 
     state={
         loggedIn: true
     }
-
 
     // render header always
     // newpostformcomponent decides whether or not it will be shown
@@ -19,10 +17,7 @@ class MainContainer extends React.Component {
         return(
             <div>
                 {!this.state.loggedIn ? <LoginFormComponent/> : 
-                <div>
-                    <NewPostFormComponent />
-                    <PostsContainer />
-                </div>}
+                <DashboardContainer/>}
             </div>
         )}
 
