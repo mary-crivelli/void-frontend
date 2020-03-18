@@ -7,7 +7,7 @@ class DashboardContainer extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="dashboard-container">
                 <NewPostFormComponent />
                 <PostsContainer />
             </div>

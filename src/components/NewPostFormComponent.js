@@ -22,7 +22,7 @@ class NewPostFormComponent extends React.Component {
 
 
         return (
-            <div>
+            <div className="new-post-form-component">
                 {this.state.newPostButtonClicked ? 
                     <div>
                         <button onClick={this.handleClick}>Show New Post Form</button>

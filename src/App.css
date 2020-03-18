@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.dashboard-container {
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.posts-container {
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.user-profile-container {
+
 }
 
-.App-link {
-  color: #61dafb;
+.footer-component {
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-component {
+  
+}
+
+.login-form-component {
+  
+}
+
+.new-post-form-component {
+  
+}
+
+.post-component {
+    width: 740px;
+    margin-left: 25%;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post-component p {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.post-component h1 {
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.post-component h2 {
+  font-size: 15px;
+  padding-left: 30px;
+  
+}
+
+.user-profile-component {
+  
 }

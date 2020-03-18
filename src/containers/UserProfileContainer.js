@@ -5,7 +5,7 @@ class UserProfileContainer extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="user-profile-container">
                 <UserProfileComponent />
                 
             </div>

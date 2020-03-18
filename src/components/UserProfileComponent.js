@@ -12,7 +12,7 @@ class UserProfileComponent extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="user-profile-component">
                 {/* <h2>{users[0].username}</h2> */}
             </div>
         )

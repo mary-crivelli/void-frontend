@@ -3,10 +3,10 @@ import React from 'react';
 class PostComponent extends React.Component {
     render(){
         return (
-            <div>
+            <div className="post-component">
                 <h1>{this.props.title}</h1>
-                <h3>{this.props.username}</h3>
                 <p>{this.props.body}</p>
+                <h2>- @{this.props.username}</h2>
             </div>
         )
     }
