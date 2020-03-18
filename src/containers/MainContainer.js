@@ -1,11 +1,13 @@
 import React from 'react';
 import LoginFormComponent from '../components/LoginFormComponent';
 import DashboardContainer from './DashboardContainer';
+import UserProfileContainer from './UserProfileContainer';
 
 class MainContainer extends React.Component {
 
     state={
-        loggedIn: true
+        loggedIn: true,
+        postsView: true
     }
 
     // render header always
@@ -17,7 +19,11 @@ class MainContainer extends React.Component {
         return(
             <div>
                 {!this.state.loggedIn ? <LoginFormComponent/> : 
-                <DashboardContainer/>}
+                    <div>
+                        {this.state.postsView ? <DashboardContainer/> :
+                        <UserProfileContainer/>}
+                    </div>
+                }
             </div>
         )}
 
