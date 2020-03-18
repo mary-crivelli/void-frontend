@@ -30,10 +30,10 @@ class NewPostFormComponent extends React.Component {
                 : <div>
                     <button onClick={this.handleClick}>Remove New Post Form</button>
                     <form>
-                        <label for="title">Title:</label>
+                        <label htmlFor="title">Title:</label>
                         <input type="text" id="title" />
                         <br />
-                        <label for="body">Body:</label>
+                        <label htmlFor="body">Body:</label>
                         <textarea id="body" />
                         <br /> 
                         <input type="submit" />
