@@ -7,16 +7,19 @@ class PostsContainer extends React.Component {
     state={
         posts: [
             {
+                id: 1, 
                 title: "foo",
                 username: "dillon", 
                 body: "bar"
             },
             {
+                id: 2, 
                 title: "bepis", 
                 username: "mary",
                 body: "conk"
             },
             {
+                id: 3, 
                 title: "test", 
                 username: "dennis",
                 body: "test"
@@ -29,7 +32,7 @@ class PostsContainer extends React.Component {
             <div>
                 <h3>.map posts</h3>
                 {this.state.posts.map((post) => 
-                <PostComponent title={post.title} username={post.username} body={post.body} />)}
+                <PostComponent title={post.title} username={post.username} body={post.body} key={post.id} />)}
             </div>
         )
     }
