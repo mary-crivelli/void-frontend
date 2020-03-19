@@ -30,7 +30,6 @@ class PostsContainer extends React.Component {
     render(){
         return(
             <div className="posts-container">
-                <h3>.map posts</h3>
                 {this.state.posts.map((post) => 
                 <PostComponent title={post.title} username={post.username} body={post.body} key={post.id} />)}
             </div>

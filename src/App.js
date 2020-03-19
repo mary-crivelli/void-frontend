@@ -9,7 +9,7 @@ const API = '/'
 class App extends React.Component {
 
   state={
-    loggedIn: false,
+    loggedIn: true,
     userData: [], 
     currentUserId: null, 
     currentUser: null
@@ -73,7 +73,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <HeaderComponent />
-        <MainContainer loggedIn={this.loggedIn} handleNewUserSubmit={this.handleNewUserSubmit} />
+        <MainContainer loggedIn={this.state.loggedIn} handleNewUserSubmit={this.handleNewUserSubmit} />
         <FooterComponent />
       </div>
     )};

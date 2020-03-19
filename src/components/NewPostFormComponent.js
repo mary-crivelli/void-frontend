@@ -34,9 +34,10 @@ class NewPostFormComponent extends React.Component {
                         <input type="text" id="title" />
                         <br />
                         <label htmlFor="body">Body:</label>
+                        <br />
                         <textarea id="body" />
                         <br /> 
-                        <input type="submit" />
+                        <button>Submit</button>
                     </form>
                 </div>}
             </div>

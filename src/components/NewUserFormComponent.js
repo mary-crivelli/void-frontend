@@ -11,10 +11,7 @@ class NewUserFormComponent extends React.Component {
                     <input type="text" id="title" />
                     <br />
                     <label htmlFor="password">Password:</label>
-                    <input id="password" />
-                    <br /> 
-                    <label htmlFor="password">Confirm Password:</label>
-                    <input id="password" />
+                    <input id="password" type="password" />
                     <br /> 
                     <button onClick={this.props.handleNewUserSubmit}>Submit</button>
                 </form>
