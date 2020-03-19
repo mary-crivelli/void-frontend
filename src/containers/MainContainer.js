@@ -6,9 +6,8 @@ import UserProfileContainer from './UserProfileContainer';
 class MainContainer extends React.Component {
 
     state={
-        loggedIn: true,
         postsView: true
-    }
+      }
 
     // render header always
     // newpostformcomponent decides whether or not it will be shown

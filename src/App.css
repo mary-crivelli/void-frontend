@@ -18,8 +18,17 @@
 
 }
 
+.footer-component h1 {
+  text-align: center;
+  font-size: 13px;
+}
+
 .header-component {
   
+}
+
+.header-component h1 {
+  text-align: center;
 }
 
 .login-form-component {
@@ -53,7 +62,6 @@
 .post-component h2 {
   font-size: 15px;
   padding-left: 30px;
-  
 }
 
 .user-profile-component {
