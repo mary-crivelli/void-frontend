@@ -7,7 +7,6 @@ class LoginFormComponent extends React.Component {
         super(props);
         this.state = {newUserLinkClicked: false};
     
-        // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
       }
 

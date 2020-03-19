@@ -5,7 +5,7 @@ class PostComponent extends React.Component {
         return (
             <div className="post-component">
                 <h1>{this.props.title}</h1>
-                <p>{this.props.body}</p>
+                <blockquote>{this.props.body}</blockquote>
                 <h2>- @{this.props.username}</h2>
             </div>
         )

@@ -7,15 +7,40 @@ class NewPostFormComponent extends React.Component {
         this.state = {newPostButtonClicked: true};
     
         // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
+        this.newPostFormToggle = this.newPostFormToggle.bind(this);
       }
 
-    handleClick(e) {
-        e.preventDefault();
+    newPostFormToggle(event) {
+        event.preventDefault();
         this.setState(state => ({
             newPostButtonClicked: !state.newPostButtonClicked
           }));
       }
+
+    //   newPostSubmit(event) {
+    //     event.preventDefault();
+
+    //     // let hashedPass = formula
+
+    //     let postData = {
+    //         title: title,
+    //         body: body,
+    //         user: this.state.user
+    //     }
+
+    //   fetch(API + `/Article`, {
+    //     headers: {
+    //       'Accept': 'application/json', 
+    //       'Content-Type': 'application/json'
+    //     }, 
+    //     method: 'POST',
+    //     body: JSON.stringify(newUserCredentials)
+    //   })
+    //   .then(response => response.json())
+    //   .then((newPost) => this.setState({
+
+    //   }))
+    //   }
 
 
     render(){
@@ -25,10 +50,10 @@ class NewPostFormComponent extends React.Component {
             <div className="new-post-form-component">
                 {this.state.newPostButtonClicked ? 
                     <div>
-                        <button onClick={this.handleClick}>Show New Post Form</button>
+                        <button onClick={this.newPostFormToggle}>New post</button>
                     </div> 
                 : <div>
-                    <button onClick={this.handleClick}>Remove New Post Form</button>
+                    
                     <form>
                         <label htmlFor="title">Title:</label>
                         <input type="text" id="title" />
@@ -37,9 +62,13 @@ class NewPostFormComponent extends React.Component {
                         <br />
                         <textarea id="body" />
                         <br /> 
-                        <button>Submit</button>
+                        <button onClick={this.newPostSubmit}>Submit</button>
+                        <br />
+                        <button onClick={this.newPostFormToggle}>Cancel</button>
                     </form>
+                    
                 </div>}
+                
             </div>
         )
     }

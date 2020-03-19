@@ -99,6 +99,9 @@
 
 .new-post-form-component label {
   margin-left: 25%;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .new-post-form-component input {
@@ -119,21 +122,22 @@
 }
 
 .new-post-form-component textarea {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  margin-left: 25%;
-  width: 740px;
-  height: 125px;
   background-color: rgb(252, 252, 251);
-  outline: 0px;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  padding-left: 5px;
   display: inline-block;
+  height: 125px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin-left: 25%;
   margin-bottom: 10px;
+  margin-top: 10px;
+  outline: 0px;
+  padding-left: 5px;
+  width: 740px;
 }
 
 .new-user-form-component button {
