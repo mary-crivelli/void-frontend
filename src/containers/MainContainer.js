@@ -17,7 +17,7 @@ class MainContainer extends React.Component {
     render(){
         return(
             <div className="main-container">
-                {!this.state.loggedIn ? <LoginFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit}/> : 
+                {!this.props.loggedIn ? <LoginFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit}/> : 
                     <div>
                         {this.state.postsView ? <DashboardContainer/> :
                         <UserProfileContainer/>}

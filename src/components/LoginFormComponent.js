@@ -22,15 +22,15 @@ class LoginFormComponent extends React.Component {
         return (
            <div> {!this.state.newUserLinkClicked ? <div className="login-form-component">
                 <form>
-                    <label for="title">Username:</label>
+                    <label htmlFor="title">Username:</label>
                     <input type="text" id="title" />
                     <br />
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input id="password" />
                     <br /> 
                     <button>Login</button>
                 </form>
-                <a href='' onClick={this.handleClick}>First time here? Create an account.</a>
+                <button className="link-button" onClick={this.handleClick}>First time here? Create an account.</button>
             </div>
         : <NewUserFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit} />
         }</div>

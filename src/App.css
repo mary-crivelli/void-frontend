@@ -31,16 +31,66 @@
   text-align: center;
 }
 
+.link-button {
+  border: 0px;
+  font: inherit;
+  color: blue;
+  text-decoration: underline;
+  text-underline-position: below;
+}
+
 .login-form-component {
   
+}
+
+.login-form-component label {
+  display: inline-block;
+  text-align: right;
+  margin-right: 7px;
+}
+
+.login-form-component input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    width: 15%;
+    height: 28px;
+    background-color: rgb(252, 252, 251);
+    outline: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding-left: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .new-post-form-component {
   
 }
 
-.new-user-form-component {
-  
+.new-user-form-component label {
+  display: inline-block;
+  text-align: right;
+  margin-right: 7px;
+}
+
+.new-user-form-component input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  width: 15%;
+  height: 28px;
+  background-color: rgb(252, 252, 251);
+  outline: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .post-component {

@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   // getUsers() {
-  //   fetch(API + '/Users')
+  //   fetch(API + '/GetUsers')
   //   .then(response => response.json())
   //   .then(userData => {
   //     this.setState({
@@ -73,7 +73,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <HeaderComponent />
-        <MainContainer handleNewUserSubmit={this.handleNewUserSubmit} />
+        <MainContainer loggedIn={this.loggedIn} handleNewUserSubmit={this.handleNewUserSubmit} />
         <FooterComponent />
       </div>
     )};
