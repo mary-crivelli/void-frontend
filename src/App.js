@@ -9,7 +9,7 @@ const API = '/'
 class App extends React.Component {
 
   state={
-    loggedIn: true,
+    loggedIn: false,
     userData: [], 
     currentUserId: null, 
     currentUser: null, 
@@ -53,7 +53,7 @@ class App extends React.Component {
     }
 
     // whether this works is dependent upon what /User gives back
-    fetch(API + `/User`, {
+    fetch(API + `/User/Create`, {
       headers: {
         'Accept': 'application/json', 
         'Content-Type': 'application/json'

@@ -79,6 +79,9 @@
   display: inline-block;
   text-align: right;
   margin-right: 7px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .login-form-component input {
