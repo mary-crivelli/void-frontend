@@ -5,13 +5,16 @@ import UserProfileContainer from './UserProfileContainer';
 
 class MainContainer extends React.Component {
 
-    state={
-        articlesView: true
-      }
+    // mainContainerView options: ["loginForm", "newUserForm", "postsDashboard", "userProfile"]
+    // if/then would decide which of the four is shown
+
+     state={
+        articlesView: true,
+        mainContainerView: "loginForm"
+    }
 
     // render header always
-    // newarticleformcomponent decides whether or not it will be shown
-    // render dashboard container OR user profile container based on state
+
     // render footer always
 
     render(){

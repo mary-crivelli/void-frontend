@@ -9,9 +9,8 @@ const API = '/'
 class App extends React.Component {
 
   state={
-    loggedIn: false,
-    userData: [], 
-    currentUserId: null, 
+    loggedIn: true,
+    allUsersData: [], 
     currentUser: null, 
     currentUsername: "mary"
   }
@@ -19,9 +18,9 @@ class App extends React.Component {
   // getUsers() {
   //   fetch(API + '/GetUsers')
   //   .then(response => response.json())
-  //   .then(userData => {
+  //   .then(allUsersData => {
   //     this.setState({
-  //       userData: userData
+  //       allUsersData: allUsersData
   //     })
   //   })
   // }
@@ -33,10 +32,9 @@ class App extends React.Component {
   // handleLoginSubmit = (event, userInput) => {
   //   event.preventDefault();
   //   let username = userInput
-  //   let user = this.state.userData.find(function(user){ return user.display_name.includes(username)})
+  //   let user = this.state.allUsersData.find(function(user){ return user.display_name.includes(username)})
 
   //   this.setState({
-  //     currentUserId: user.id,
   //     currentUser: user,
   //     loggedIn: true
   //   })
@@ -63,8 +61,7 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then((newUserEntry) => this.setState({
-      userData: [...this.state.userData, newUserEntry],
-      currentUserId: newUserEntry.id, 
+      allUsersData: [...this.state.allUsersData, newUserEntry],
       currentUser: newUserEntry,
       loggedIn: true
     }))
