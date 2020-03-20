@@ -12,7 +12,8 @@ class App extends React.Component {
     loggedIn: true,
     userData: [], 
     currentUserId: null, 
-    currentUser: null
+    currentUser: null, 
+    currentUsername: "mary"
   }
 
   // getUsers() {
@@ -72,7 +73,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <HeaderComponent />
+        <HeaderComponent currentUsername={this.state.currentUsername} />
         <MainContainer loggedIn={this.state.loggedIn} handleNewUserSubmit={this.handleNewUserSubmit} />
         <FooterComponent />
       </div>

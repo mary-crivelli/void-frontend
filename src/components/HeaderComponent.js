@@ -5,6 +5,7 @@ class HeaderComponent extends React.Component {
         return (
             <div className="header-component">
                 <h1>The Void</h1>
+                <h2>@{this.props.currentUsername}</h2>
                 <hr />
             </div>
         )
