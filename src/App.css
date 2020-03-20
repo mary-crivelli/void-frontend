@@ -26,15 +26,25 @@
 
 }
 
+.header-component button {
+
+}
+
 .header-component h1 {
   text-align: center;
 }
 
-.header-component h2 {
+.header-component button {
   font-size: 20px;
   font-weight:300;
   text-align: right;
   margin-right: 40px;
+  border: 0px;
+  font: inherit;
+  color: blue;
+  text-decoration: underline;
+  text-underline-position: below;
+  margin-left: 90%;
 }
 
 .link-button {
@@ -49,7 +59,7 @@
   
 }
 
-.login-form-component button {
+.general-button {
   margin-left: 10px;
   border-radius: 4px;
   margin-bottom: 10px;

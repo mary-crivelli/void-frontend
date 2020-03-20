@@ -27,7 +27,7 @@ class LoginFormComponent extends React.Component {
                     <label htmlFor="password">Password:</label>
                     <input id="password" type="password" />
                     <br /> 
-                    <button>Login</button>
+                    <button className="general-button">Login</button>
                 </form>
                 <button className="link-button" onClick={this.handleClick}>First time here? Create an account.</button>
             </div>

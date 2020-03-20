@@ -13,7 +13,9 @@ class UserProfileComponent extends React.Component {
     render(){
         return (
             <div className="user-profile-component">
-                {/* <h2>{users[0].username}</h2> */}
+                <h1>user.name</h1>
+                <h3>user.posts.map</h3>
+                <a href="">change password</a>
             </div>
         )
     }

@@ -6,7 +6,7 @@ import UserProfileContainer from './UserProfileContainer';
 class MainContainer extends React.Component {
 
     state={
-        postsView: true
+        postsView: false
       }
 
     // render header always
