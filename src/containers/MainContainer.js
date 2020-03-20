@@ -20,7 +20,7 @@ class MainContainer extends React.Component {
     render(){
         return(
             <div className="main-container">
-                {!this.props.loggedIn ? <LoginFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit}/> : 
+                {!this.props.loggedIn ? <LoginFormComponent handleUserCreation={this.props.handleUserCreation}/> : 
                     <div>
                         {this.state.articlesView ? <DashboardContainer/> :
                         <UserProfileContainer/>}

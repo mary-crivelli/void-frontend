@@ -31,7 +31,7 @@ class LoginFormComponent extends React.Component {
                 </form>
                 <button className="link-button" onClick={this.handleClick}>First time here? Create an account.</button>
             </div>
-        : <NewUserFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit} />
+        : <NewUserFormComponent handleUserCreation={this.props.handleUserCreation} />
         }</div>
         )
     }

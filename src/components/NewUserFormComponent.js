@@ -8,12 +8,12 @@ class NewUserFormComponent extends React.Component {
             <div className="new-user-form-component">
                 <form>
                     <label htmlFor="title">Username:</label>
-                    <input type="text" id="title" />
+                    <input id="username" type="text" />
                     <br />
                     <label htmlFor="password">Password:</label>
                     <input id="password" type="password" />
                     <br /> 
-                    <button onClick={this.props.handleNewUserSubmit}>Submit</button>
+                    <button onClick={this.props.handleUserCreation}>Submit</button>
                 </form>
             </div>
         )

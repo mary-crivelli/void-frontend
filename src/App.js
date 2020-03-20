@@ -40,14 +40,14 @@ class App extends React.Component {
   //   })
   // }
 
-  handleNewUserSubmit = (event, username, password) => {
+  handleUserCreation = (event, usernameInput, passwordInput) => {
     event.preventDefault();
 
     // let hashedPass = formula
 
     let newUserCredentials = {
-      username: username, 
-      password: password
+      username: usernameInput, 
+      password: passwordInput
     }
 
     // whether this works is dependent upon what /User gives back
@@ -71,7 +71,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <HeaderComponent currentUsername={this.state.currentUsername} />
-        <MainContainer loggedIn={this.state.loggedIn} handleNewUserSubmit={this.handleNewUserSubmit} />
+        <MainContainer loggedIn={this.state.loggedIn} handleUserCreation={this.handleUserCreation} />
         <FooterComponent />
       </div>
     )};
