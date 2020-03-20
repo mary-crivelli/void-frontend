@@ -1,6 +1,6 @@
 import React from 'react';
-import PostsContainer from './PostsContainer';
-import NewPostFormComponent from './../components/NewPostFormComponent';
+import ArticlesContainer from './ArticlesContainer';
+import NewArticleFormComponent from './../components/NewArticleFormComponent';
 
 
 class DashboardContainer extends React.Component {
@@ -8,8 +8,8 @@ class DashboardContainer extends React.Component {
     render(){
         return(
             <div className="dashboard-container">
-                <NewPostFormComponent />
-                <PostsContainer />
+                <NewArticleFormComponent />
+                <ArticlesContainer />
             </div>
         )
     }

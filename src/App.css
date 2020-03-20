@@ -6,7 +6,7 @@
 
 }
 
-.posts-container {
+.articles-container {
 
 }
 
@@ -102,11 +102,11 @@
 
 }
 
-.new-post-form-component {
+.new-article-form-component {
   
 }
 
-.new-post-form-component button {
+.new-article-form-component button {
   margin-left: 25%;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -121,14 +121,14 @@
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
 }
 
-.new-post-form-component label {
+.new-article-form-component label {
   margin-left: 25%;
   padding-right: 10px;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.new-post-form-component input {
+.new-article-form-component input {
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -145,7 +145,7 @@
   margin-bottom: 10px;
 }
 
-.new-post-form-component textarea {
+.new-article-form-component textarea {
   background-color: rgb(252, 252, 251);
   border-width: 1px;
   border-style: solid;
@@ -203,7 +203,7 @@
   margin-bottom: 10px;
 }
 
-.post-component {
+.article-component {
   width: 740px;
   margin-left: 25%;
   border: 1px solid grey;
@@ -214,19 +214,19 @@
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
 }
 
-.post-component p {
+.article-component p {
   font-size: 20px;
   padding-left: 30px;
 }
 
-.post-component h1 {
+.article-component h1 {
   font-size: 30px;
   font-weight: bold;
   padding-left: 30px;
   padding-top: 0px;
 }
 
-.post-component h2 {
+.article-component h2 {
   font-size: 15px;
   padding-left: 30px;
 }

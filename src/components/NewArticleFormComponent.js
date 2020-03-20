@@ -1,28 +1,28 @@
 import React from 'react';
 
-class NewPostFormComponent extends React.Component {
+class NewArticleFormComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {newPostButtonClicked: true};
+        this.state = {newArticleButtonClicked: true};
     
         // This binding is necessary to make `this` work in the callback
-        this.newPostFormToggle = this.newPostFormToggle.bind(this);
+        this.newArticleFormToggle = this.newArticleFormToggle.bind(this);
       }
 
-    newPostFormToggle(event) {
+    newArticleFormToggle(event) {
         event.preventDefault();
         this.setState(state => ({
-            newPostButtonClicked: !state.newPostButtonClicked
+            newArticleButtonClicked: !state.newArticleButtonClicked
           }));
       }
 
-    //   newPostSubmit(event) {
+    //   newArticleSubmit(event) {
     //     event.preventDefault();
 
     //     // let hashedPass = formula
 
-    //     let postData = {
+    //     let articleData = {
     //         title: title,
     //         body: body,
     //         user: this.state.user
@@ -37,7 +37,7 @@ class NewPostFormComponent extends React.Component {
     //     body: JSON.stringify(newUserCredentials)
     //   })
     //   .then(response => response.json())
-    //   .then((newPost) => this.setState({
+    //   .then((newArticle) => this.setState({
 
     //   }))
     //   }
@@ -47,10 +47,10 @@ class NewPostFormComponent extends React.Component {
 
 
         return (
-            <div className="new-post-form-component">
-                {this.state.newPostButtonClicked ? 
+            <div className="new-article-form-component">
+                {this.state.newArticleButtonClicked ? 
                     <div>
-                        <button onClick={this.newPostFormToggle}>New post</button>
+                        <button onClick={this.newArticleFormToggle}>New Article</button>
                     </div> 
                 : <div>
                     
@@ -62,9 +62,9 @@ class NewPostFormComponent extends React.Component {
                         <br />
                         <textarea id="body" />
                         <br /> 
-                        <button onClick={this.newPostSubmit}>Submit</button>
+                        <button onClick={this.newArticleSubmit}>Submit</button>
                         <br />
-                        <button onClick={this.newPostFormToggle}>Cancel</button>
+                        <button onClick={this.newArticleFormToggle}>Cancel</button>
                     </form>
                     
                 </div>}
@@ -74,4 +74,4 @@ class NewPostFormComponent extends React.Component {
     }
 }
 
-export default NewPostFormComponent;
+export default NewArticleFormComponent;

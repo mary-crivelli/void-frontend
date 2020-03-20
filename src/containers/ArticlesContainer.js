@@ -1,11 +1,11 @@
 import React from 'react';
-import PostComponent from '../components/PostComponent';
+import ArticleComponent from '../components/ArticleComponent';
 
-class PostsContainer extends React.Component {
+class ArticlesContainer extends React.Component {
 
-    // dummy post data w/ title, username, body
+    // dummy article data w/ title, username, body
     state={
-        posts: [
+        articles: [
             {
                 id: 1, 
                 title: "foo",
@@ -29,13 +29,13 @@ class PostsContainer extends React.Component {
 
     render(){
         return(
-            <div className="posts-container">
-                {this.state.posts.map((post) => 
-                <PostComponent title={post.title} username={post.username} body={post.body} key={post.id} />)}
+            <div className="articles-container">
+                {this.state.articles.map((article) => 
+                <ArticleComponent title={article.title} username={article.username} body={article.body} key={article.id} />)}
             </div>
         )
     }
 
 }
 
-export default PostsContainer;
+export default ArticlesContainer;

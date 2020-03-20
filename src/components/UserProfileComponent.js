@@ -14,7 +14,7 @@ class UserProfileComponent extends React.Component {
         return (
             <div className="user-profile-component">
                 <h1>user.name</h1>
-                <h3>user.posts.map</h3>
+                <h3>user.articles.map</h3>
                 <a href="">change password</a>
             </div>
         )

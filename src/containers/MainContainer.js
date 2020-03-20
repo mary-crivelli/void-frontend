@@ -6,11 +6,11 @@ import UserProfileContainer from './UserProfileContainer';
 class MainContainer extends React.Component {
 
     state={
-        postsView: false
+        articlesView: true
       }
 
     // render header always
-    // newpostformcomponent decides whether or not it will be shown
+    // newarticleformcomponent decides whether or not it will be shown
     // render dashboard container OR user profile container based on state
     // render footer always
 
@@ -19,7 +19,7 @@ class MainContainer extends React.Component {
             <div className="main-container">
                 {!this.props.loggedIn ? <LoginFormComponent handleNewUserSubmit={this.props.handleNewUserSubmit}/> : 
                     <div>
-                        {this.state.postsView ? <DashboardContainer/> :
+                        {this.state.articlesView ? <DashboardContainer/> :
                         <UserProfileContainer/>}
                     </div>
                 }
