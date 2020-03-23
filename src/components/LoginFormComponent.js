@@ -3,23 +3,9 @@ import NewUserFormComponent from './NewUserFormComponent';
 
 class LoginFormComponent extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {newUserLinkClicked: false};
-    
-        this.handleClick = this.handleClick.bind(this);
-      }
-
-    handleClick(e) {
-        e.preventDefault();
-        this.setState(state => ({
-            newUserLinkClicked: !state.newUserLinkClicked
-          }));
-      }
-
     render(){
         return (
-           <div> {!this.state.newUserLinkClicked ? <div className="login-form-component">
+           <div className="login-form-component">
                 <form>
                     <label htmlFor="title">Username:</label>
                     <input type="text" id="title" />
@@ -29,10 +15,8 @@ class LoginFormComponent extends React.Component {
                     <br /> 
                     <button className="general-button">Login</button>
                 </form>
-                <button className="link-button" onClick={this.handleClick}>First time here? Create an account.</button>
+                <button className="link-button" onClick={this.props.changeMainView(event, "signupForm")}>First time here? Create an account.</button>
             </div>
-        : <NewUserFormComponent handleUserCreation={this.props.handleUserCreation} />
-        }</div>
         )
     }
 }

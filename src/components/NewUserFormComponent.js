@@ -6,6 +6,7 @@ class NewUserFormComponent extends React.Component {
     render(){
         return (
             <div className="new-user-form-component">
+                <h1>Sign up for an account here:</h1>
                 <form>
                     <label htmlFor="title">Username:</label>
                     <input id="username" type="text" />
