@@ -15,19 +15,19 @@ class App extends React.Component {
     currentUsername: "mary"
   }
 
-  // getUsers() {
-  //   fetch(API + '/GetUsers')
-  //   .then(response => response.json())
-  //   .then(allUsersData => {
-  //     this.setState({
-  //       allUsersData: allUsersData
-  //     })
-  //   })
-  // }
+  getAllUsers() {
+    fetch(API + '/User/All')
+    .then(response => response.json())
+    .then(allUsersData => {
+      this.setState({
+        allUsersData: allUsersData
+      })
+    })
+  }
 
-  // componentDidMount(){
-  //   this.getUsers()
-  // }
+  componentDidMount(){
+    this.getAllUsers()
+  }
 
   // handleLoginSubmit = (event, userInput) => {
   //   event.preventDefault();

@@ -6,6 +6,7 @@ class HeaderComponent extends React.Component {
             <div className="header-component">
                 <h1>The Void</h1>
                 <button>@{this.props.currentUsername}</button>
+                <button>Logout</button>
                 <hr />
             </div>
         )
