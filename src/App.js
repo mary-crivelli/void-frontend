@@ -11,52 +11,74 @@ class App extends React.Component {
   // view options: "loginForm", "signupForm", "dashboardView", "profileView"
 
   state={
-    loggedIn: true,
     allUsersData: [], 
+    allArticlesData: [], 
     currentUser: null, 
     currentUsername: "",
-    mainView: "dashboardView"
+    loggedIn: false,
+    mainView: "loginForm"
   }
 
   getAllUsers() {
     fetch(API + '/User/All')
     .then(response => response.json())
     .then(allUsersData => {
+    if (!allUsersData.includes("error")) {
       this.setState({
         allUsersData: allUsersData
       })
+    } else {console.log("error")}
     })
-    // then read response for word "error" if appears create error notif else set state accordingly
+  }
+
+  getAllArticles() {
+    fetch(API + '/User/All')
+    .then(response => response.json())
+    .then(allArticlesData => {
+    if (!allArticlesData.includes("error")) {
+      this.setState({
+        allArticlesData: allArticlesData
+      })
+      } else {console.log("error")}
+    })
   }
 
   componentDidMount(){
-    this.getAllUsers()
+    this.getAllUsers();
+    this.getAllArticles()
   }
 
-  // handleLoginSubmit = (event, userInput) => {
-  //   event.preventDefault();
-  //   let username = userInput
-  //   let user = this.state.allUsersData.find(function(user){ return user.display_name.includes(username)})
-  
-  // then read response for word "error" if appears create error notif else set state accordingly
-
-  //   this.setState({
-  //     currentUser: user,
-  //     loggedIn: true
-  //   })
-  // }
-
-  handleUserCreation = (event, usernameInput, passwordInput) => {
+  handleLoginSubmit = (event, userInput) => {
     event.preventDefault();
+    let user = userInput
 
-    // let hashedPass = formula
+    fetch(API + `/User/Login`, {
+      headers: {
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json'
+      }, 
+      method: 'POST',
+      body: JSON.stringify(user)
+    })
+    .then(response => response.json())
+    .then((loggedInUserData) => {
+        if (loggedInUserData.includes("error")) {
+          this.setState({
+          currentUser: loggedInUserData,
+          loggedIn: true
+      })
+    } else {console.log("error")}
+    }
+    )
+  }
+
+  handleUserCreation = (usernameInput, passwordInput) => {
 
     let newUserCredentials = {
       username: usernameInput, 
       password: passwordInput
     }
 
-    // whether this works is dependent upon what /User gives back
     fetch(API + `/User/Create`, {
       headers: {
         'Accept': 'application/json', 
@@ -65,19 +87,22 @@ class App extends React.Component {
       method: 'POST',
       body: JSON.stringify(newUserCredentials)
     })
-    
     .then(response => response.json())
-    // then read response for word "error" if appears create error notif else set state accordingly
-    .then((newUserEntry) => this.setState({
-      allUsersData: [...this.state.allUsersData, newUserEntry],
-      currentUser: newUserEntry,
-      loggedIn: true
-    }))
+    .then((newUserEntry) => {
+        if (!newUserEntry.includes("error")) {
+          this.setState({
+          allUsersData: [...this.state.allUsersData, newUserEntry],
+          currentUser: newUserEntry,
+          loggedIn: true
+      })
+    } else {console.log("error")}
+    })
   }
 
-  changeMainView(event, changeKey) {
-    // event.preventDefault();
-
+  changeMainView = (changeKey) => {
+    this.setState({
+      mainView: changeKey
+    });
   }
 
   render(){

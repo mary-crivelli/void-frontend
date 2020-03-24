@@ -9,25 +9,25 @@ class MainContainer extends React.Component {
     // mainContainerView options: ["loginForm", "newUserForm", "postsDashboard", "userProfile"]
     // if/then would decide which of the four is shown
 
-     state={
-        articlesView: true,
-        mainContainerView: "loginForm"
-    }
-
-    // render header always
-
-    // render footer always
-
     render(){
         let view;
-        if (this.props.mainView === "loginForm") {
-            view = <LoginFormComponent handleUserCreation={this.props.handleUserCreation}/>;
+        if (this.props.mainView === "loginForm" && this.props.loggedIn === false) {
+            view = <LoginFormComponent 
+                handleUserCreation={this.props.handleUserCreation} 
+                changeMainView={this.props.changeMainView}
+                />;
         } else if (this.props.mainView === "signupForm") {
-            view = <NewUserFormComponent />;
+            view = <NewUserFormComponent 
+                changeMainView={this.props.changeMainView}
+                />;
         } else if (this.props.mainView === "dashboardView") {
-            view = <DashboardContainer/>;
+            view = <DashboardContainer
+                changeMainView={this.props.changeMainView}
+                />;
         } else if (this.props.mainView === "profileView") {
-            view = <UserProfileContainer />;
+            view = <UserProfileContainer 
+                changeMainView={this.props.changeMainView}
+                />;
         } else {
             console.log("state error mainView");
         }
