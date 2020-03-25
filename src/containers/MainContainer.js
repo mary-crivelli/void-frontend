@@ -2,11 +2,10 @@ import React from 'react';
 import LoginFormComponent from '../components/LoginFormComponent';
 import NewUserFormComponent from '../components/NewUserFormComponent';
 import DashboardContainer from './DashboardContainer';
-import UserProfileContainer from './UserProfileContainer';
 
 class MainContainer extends React.Component {
 
-    // mainContainerView options: ["loginForm", "newUserForm", "postsDashboard", "userProfile"]
+    // mainContainerView options: ["loginForm", "newUserForm", "postsDashboard"]
     // if/then would decide which of the four is shown
 
     render(){
@@ -28,10 +27,7 @@ class MainContainer extends React.Component {
                 changeMainView={this.props.changeMainView}
                 allArticles={this.props.allArticles}
                 allUsers={this.props.allUsers}
-                />;
-        } else if (this.props.mainView === "profileView") {
-            view = <UserProfileContainer 
-                changeMainView={this.props.changeMainView}
+                handleArticleDelete={this.props.handleArticleDelete}
                 />;
         } else {
             console.log("state error mainView");

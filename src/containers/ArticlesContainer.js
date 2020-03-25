@@ -8,11 +8,12 @@ class ArticlesContainer extends React.Component {
             <div className="articles-container">
                 {this.props.allArticles.map((article) => 
                 <ArticleComponent 
-                username={article.author}
+                // username={article.author}
                 title={article.title} 
                 body={article.body} 
-                key={article.id}
-                date={article.date} 
+                handleArticleDelete={this.props.handleArticleDelete}
+                // key={article.id}
+                // date={article.date} 
                 />)}
             </div>
         )

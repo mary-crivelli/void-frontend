@@ -4,15 +4,15 @@ import MainContainer from './containers/MainContainer.js';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 
-const API = '/'
+const API = 'http://localhost:9080'
 
 class App extends React.Component {
 
   // view options: "loginForm", "signupForm", "dashboardView", "profileView"
 
   state={
-    allUsersData: [], 
-    allArticlesData: [], 
+    allUsers: [], 
+    allArticles: [], 
     currentUser: null,
     key: "",
     loggedIn: false,
@@ -56,6 +56,8 @@ class App extends React.Component {
   }
 
   handleLoginSubmit = (usernameInput, passwordInput) => {
+    // base 64 encode goes here - cGFzc3dvcmQ=
+
     let user = {
       userName: usernameInput, 
       password: passwordInput
@@ -67,25 +69,26 @@ class App extends React.Component {
         'Content-Type': 'application/json'
       }, 
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify(user)
     })
     .then(response => response.json())
     .then((loggedInUserData) => {
         if (!loggedInUserData.includes("error")) {
           this.setState({
-          currentUser: loggedInUserData,
-          key: loggedInUserData.key,
-          loggedIn: true
+            currentUser: loggedInUserData,
+            key: loggedInUserData.key,
+            loggedIn: true
       })
     } else {console.log("error")}
     })
 
     this.getAllUsers();
     this.getAllArticles();
-    console.log(this.state.allUsersData)
   }
 
   handleUserCreation = (usernameInput, passwordInput) => {
+    // base 64 encode goes here - cGFzc3dvcmQ= [btoa(passwordInput)???]
 
     let newUserCredentials = {
       username: usernameInput, 
@@ -110,6 +113,9 @@ class App extends React.Component {
       })
     } else {console.log("error")}
     })
+
+    this.getAllUsers();
+    this.getAllArticles();
   }
 
   handleNewArticle = (userTitleInput, userBodyInput) => {
@@ -209,13 +215,13 @@ class App extends React.Component {
 //         'Content-Type': 'application/json'
 //       }, 
 //       method: 'POST',
-//       body: JSON.stringify(newArticleCredentials)
+//       body: JSON.stringify(credentialsToDelete)
 //     })
 //     .then(response => response.json())
 //     // .then((responseResults) => { 
 //     //   if (responseResults.includes("error")) {console.log("error")})
-//     // }
-//     // re GET users/articles
+//     // } else {
+//   re get posts
 // }
 
   changeMainView = (changeKey) => {
@@ -237,9 +243,12 @@ class App extends React.Component {
           allUsers={this.state.allUsersData}
           loggedIn={this.state.loggedIn} 
           mainView={this.state.mainView} 
+          currentUser={this.state.currentUser}
+          key={this.state.key}
           handleUserCreation={this.handleUserCreation}
           handleLoginSubmit={this.handleLoginSubmit}
           handleNewArticle={this.handleNewArticle}
+          handleArticleDelete={this.handleArticleDelete}
           changeMainView={this.changeMainView}
         />
         <FooterComponent />
