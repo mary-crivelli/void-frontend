@@ -15,7 +15,8 @@ class NewUserFormComponent extends React.Component {
  
      handleSubmit = (event) => {
         event.preventDefault();
-        this.props.handleUserCreation(this.state.usernameInput, this.state.passwordInput);
+        let encodedPasswordInput = btoa(this.state.passwordInput);
+        this.props.handleUserCreation(this.state.usernameInput, encodedPasswordInput);
      }
  
      render(){

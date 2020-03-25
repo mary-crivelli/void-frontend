@@ -16,7 +16,7 @@ class App extends React.Component {
     currentUser: null,
     key: "",
     loggedIn: false,
-    mainView: "loginForm"
+    mainView: "signupForm"
   }
 
   getAllUsers() {
@@ -56,8 +56,6 @@ class App extends React.Component {
   }
 
   handleLoginSubmit = (usernameInput, passwordInput) => {
-    // base 64 encode goes here - cGFzc3dvcmQ=
-
     let user = {
       userName: usernameInput, 
       password: passwordInput
@@ -88,34 +86,27 @@ class App extends React.Component {
   }
 
   handleUserCreation = (usernameInput, passwordInput) => {
-    // base 64 encode goes here - cGFzc3dvcmQ= [btoa(passwordInput)???]
-
     let newUserCredentials = {
-      username: usernameInput, 
+      userName: usernameInput, 
       password: passwordInput
     }
 
     fetch(API + `/User/Create`, {
-      headers: {
-        'Accept': 'application/json', 
-        'Content-Type': 'application/json'
-      }, 
       method: 'POST',
-      body: JSON.stringify(newUserCredentials)
+      mode: 'no-cors',
+      body: JSON.stringify(newUserCredentials),
+      headers: { 
+        'Accept': 'application/json, text/plain',
+        'Content-Type': 'application/json;charset=UTF-8'
+    }
     })
-    .then(response => response.json())
-    .then((newUserEntry) => {
-        if (!newUserEntry.includes("error")) {
+    .then((response) => {
           this.setState({
-          currentUser: newUserEntry,
-          key: newUserEntry.key,
-          loggedIn: true
+            currentUser: response,
+            key: response.key,
+            loggedIn: true
       })
-    } else {console.log("error")}
     })
-
-    this.getAllUsers();
-    this.getAllArticles();
   }
 
   handleNewArticle = (userTitleInput, userBodyInput) => {
@@ -123,7 +114,7 @@ class App extends React.Component {
     let newArticleCredentials = {
       title: userTitleInput,
       body: userBodyInput
-    }
+    };
 
     fetch(API + `/Article/Create`, {
       headers: {
@@ -141,38 +132,6 @@ class App extends React.Component {
       })
     } else {console.log("error")}
     })
-  }
-
-  handleArticleDelete = () => {
-
-    fetch(API + `/Article/Delete`, {
-      headers: {
-        'Accept': 'application/json', 
-        'Content-Type': 'application/json'
-      }, 
-      method: 'DELETE'
-    })
-    .then(response => response.json())
-    // .then((responseResults) => { 
-    //   if (responseResults.includes("error")) {console.log("error")})
-    // }
-    // re GET users/articles
-  }
-
-  handleUserDelete = () => {
-
-      fetch(API + `/Article/Delete`, {
-        headers: {
-          'Accept': 'application/json', 
-          'Content-Type': 'application/json'
-        }, 
-        method: 'DELETE'
-      })
-      .then(response => response.json())
-      // .then((responseResults) => { 
-      //   if (responseResults.includes("error")) {console.log("error")})
-      // }
-      // re GET users/articles
   }
 
   handleLogout = () => {
@@ -202,11 +161,11 @@ class App extends React.Component {
     })
   }
 
-  //post delete
-//   handleUserDelete = (username, password) => {
+//   handleArticleDelete = (title, body) => {
 //     credentialsToDelete = {
-//       username: username,
-//       password: password
+//       title: title,
+//       body: body,
+//       key: this.state.key
 //     }
 
 //     fetch(API + `/Article/Delete`, {
@@ -218,10 +177,9 @@ class App extends React.Component {
 //       body: JSON.stringify(credentialsToDelete)
 //     })
 //     .then(response => response.json())
-//     // .then((responseResults) => { 
-//     //   if (responseResults.includes("error")) {console.log("error")})
-//     // } else {
-//   re get posts
+//     .then((responseResults) => { 
+//       if (responseResults.includes("error")) {console.log("error")})
+//     } else {}
 // }
 
   changeMainView = (changeKey) => {
