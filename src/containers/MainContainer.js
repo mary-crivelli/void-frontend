@@ -15,14 +15,19 @@ class MainContainer extends React.Component {
             view = <LoginFormComponent 
                 handleUserCreation={this.props.handleUserCreation} 
                 changeMainView={this.props.changeMainView}
+                handleLoginSubmit={this.props.handleLoginSubmit}
                 />;
         } else if (this.props.mainView === "signupForm") {
             view = <NewUserFormComponent 
                 changeMainView={this.props.changeMainView}
+                handleUserCreation={this.props.handleUserCreation}
                 />;
         } else if (this.props.mainView === "dashboardView") {
             view = <DashboardContainer
+                handleNewArticle={this.props.handleNewArticle}
                 changeMainView={this.props.changeMainView}
+                allArticles={this.props.allArticles}
+                allUsers={this.props.allUsers}
                 />;
         } else if (this.props.mainView === "profileView") {
             view = <UserProfileContainer 

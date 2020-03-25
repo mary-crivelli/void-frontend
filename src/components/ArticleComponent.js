@@ -7,6 +7,8 @@ class ArticleComponent extends React.Component {
                 <h1>{this.props.title}</h1>
                 <p>{this.props.body}</p>
                 <h2>- @{this.props.username}</h2>
+                <h3>on @{this.props.date}</h3>
+                <a href="">delete</a>
             </div>
         )
     }

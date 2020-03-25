@@ -8,8 +8,13 @@ class DashboardContainer extends React.Component {
     render(){
         return(
             <div className="dashboard-container">
-                <NewArticleFormComponent />
-                <ArticlesContainer />
+                <NewArticleFormComponent
+                    handleNewArticle={this.props.handleNewArticle}
+                />
+                <ArticlesContainer
+                    allArticles={this.props.allArticles}
+                    allUsers={this.props.allUsers}
+                />
             </div>
         )
     }
