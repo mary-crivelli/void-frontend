@@ -1,38 +1,239 @@
-.App {
+.dashboard-container {
+
+}
+
+.main-container {
+
+}
+
+.articles-container {
+
+}
+
+.user-profile-container {
+
+}
+
+.footer-component {
+}
+
+.footer-component h1 {
+  text-align: center;
+  font-size: 13px;
+}
+
+.header-component {
+
+}
+
+.header-component button {
+
+}
+
+.header-component h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-component button {
+  font-size: 20px;
+  font-weight:300;
+  text-align: right;
+  margin-right: 40px;
+  border: 0px;
+  font: inherit;
+  color: blue;
+  text-decoration: underline;
+  text-underline-position: below;
+  margin-left: 90%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link-button {
+  border: 0px;
+  font: inherit;
+  color: blue;
+  text-decoration: underline;
+  text-underline-position: below;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.login-form-component {
+  
 }
 
-.App-link {
-  color: #61dafb;
+.general-button {
+  margin-left: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form-component label {
+  margin-left: 10px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 7px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.login-form-component input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    width: 15%;
+    height: 28px;
+    background-color: rgb(252, 252, 251);
+    outline: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding-left: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.main-container {
+
+}
+
+.new-article-form-component {
+  
+}
+
+.new-article-form-component button {
+  margin-left: 25%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.new-article-form-component label {
+  margin-left: 25%;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.new-article-form-component input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  width: 15%;
+  height: 28px;
+  background-color: rgb(252, 252, 251);
+  outline: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.new-article-form-component textarea {
+  background-color: rgb(252, 252, 251);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  height: 125px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin-left: 25%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: 0px;
+  padding-left: 5px;
+  width: 740px;
+}
+
+.new-user-form-component button {
+  margin-left: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.new-user-form-component label {
+  margin-left: 10px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 7px;
+}
+
+.new-user-form-component input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  width: 15%;
+  height: 28px;
+  background-color: rgb(252, 252, 251);
+  outline: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.article-component {
+  width: 740px;
+  margin-left: 25%;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18); 
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
+}
+
+.article-component p {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.article-component h1 {
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 0px;
+}
+
+.article-component h2 {
+  font-size: 15px;
+  padding-left: 30px;
+}
+
+.user-profile-component {
+  
 }
