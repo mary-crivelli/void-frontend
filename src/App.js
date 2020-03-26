@@ -66,6 +66,8 @@ class App extends React.Component {
       password: passwordInput
     }
 
+    console.log(passwordInput);
+
     this.setState({
       currentUser: user
     })
@@ -81,14 +83,12 @@ class App extends React.Component {
     .then(response => response.json())
     .then((loggedInUserData) => {
         if (!loggedInUserData.msg.includes("error")) {
-          console.log(loggedInUserData);
-          this.getAllArticles();
           this.setState({
             userKey: {key: loggedInUserData.key},
             loggedIn: true,
             mainView: "dashboardView"
       });
-      console.log(this.state.userKey)
+      this.getAllArticles();
     } else {
       console.log("error")
       this.setState({

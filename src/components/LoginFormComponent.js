@@ -15,7 +15,7 @@ class LoginFormComponent extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let encodedPasswordInput = btoa(this.state.passwordInput);
+        let encodedPasswordInput = new Buffer(this.state.passwordInput).toString('base64');
         this.props.handleLoginSubmit(this.state.usernameInput, encodedPasswordInput);
     }
 
