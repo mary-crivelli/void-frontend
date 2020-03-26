@@ -23,11 +23,13 @@ class MainContainer extends React.Component {
                 />;
         } else if (this.props.mainView === "dashboardView") {
             view = <DashboardContainer
+                getAllArticles={this.props.getAllArticles}
                 handleNewArticle={this.props.handleNewArticle}
                 changeMainView={this.props.changeMainView}
                 allArticles={this.props.allArticles}
                 allUsers={this.props.allUsers}
                 handleArticleDelete={this.props.handleArticleDelete}
+                userKey={this.props.userKey}
                 />;
         } else {
             console.log("state error mainView");

@@ -14,45 +14,50 @@ class App extends React.Component {
     allUsers: [], 
     allArticles: [], 
     currentUser: null,
-    key: "",
+    userKey: "",
     loggedIn: false,
-    mainView: "signupForm"
+    mainView: "loginForm"
   }
 
   getAllUsers() {
+
     fetch(API + '/User/All', {
       method: 'POST',
-      body: JSON.stringify(this.state.key)
+      body: JSON.stringify(this.state.userKey),
+      headers: { 
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
+    }
     })
     .then(response => response.json())
     .then(allUsersData => {
-    if (!allUsersData.includes("error")) {
-      this.setState({
-        allUsersData: allUsersData
+        console.log(allUsersData.users);
+        this.setState({
+          allUsers: allUsersData.users
+        })
       })
-    } else {console.log("error")}
-    })
   }
 
   getAllArticles() {
-    fetch(API + '/User/All', {
+    fetch(API + '/Article/All', {
       method: 'POST',
-      body: JSON.stringify(this.state.key)
+      body: JSON.stringify(this.state.userKey),
+      headers: { 
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
+      }
     })
     .then(response => response.json())
     .then(allArticlesData => {
-    if (!allArticlesData.includes("error")) {
-      this.setState({
-        allArticlesData: allArticlesData
-      })
-      } else {console.log("error")}
+    if (allArticlesData.msg.includes("error")) {
+      console.log("error")
+      } else {
+        console.log(allArticlesData)
+        this.setState({
+          allArticles: allArticlesData.articles
+        })
+      }
     })
-  }
-
-  componentDidMount(){
-    // this.getAllUsers();
-    // this.getAllArticles();
-    // console.log(this.state.allUsersData)
   }
 
   handleLoginSubmit = (usernameInput, passwordInput) => {
@@ -61,60 +66,98 @@ class App extends React.Component {
       password: passwordInput
     }
 
+    this.setState({
+      currentUser: user
+    })
+
     fetch(API + `/User/Login`, {
-      headers: {
-        'Accept': 'application/json', 
+      headers: { 
+        'Accept': '*/*',
         'Content-Type': 'application/json'
-      }, 
+    }, 
       method: 'POST',
-      mode: 'no-cors',
       body: JSON.stringify(user)
     })
     .then(response => response.json())
     .then((loggedInUserData) => {
-        if (!loggedInUserData.includes("error")) {
+        if (!loggedInUserData.msg.includes("error")) {
+          console.log(loggedInUserData);
+          this.getAllArticles();
           this.setState({
-            currentUser: loggedInUserData,
-            key: loggedInUserData.key,
-            loggedIn: true
+            userKey: {key: loggedInUserData.key},
+            loggedIn: true,
+            mainView: "dashboardView"
+      });
+      console.log(this.state.userKey)
+    } else {
+      console.log("error")
+      this.setState({
+        currentUser: null
       })
-    } else {console.log("error")}
-    })
-
-    this.getAllUsers();
-    this.getAllArticles();
+    }
+    }) 
   }
 
   handleUserCreation = (usernameInput, passwordInput) => {
-    let newUserCredentials = {
+    let newUserCredentials = JSON.stringify({
       userName: usernameInput, 
       password: passwordInput
-    }
+    });
 
     fetch(API + `/User/Create`, {
       method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify(newUserCredentials),
+      body: newUserCredentials,
       headers: { 
-        'Accept': 'application/json, text/plain',
-        'Content-Type': 'application/json;charset=UTF-8'
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
     }
     })
-    .then((response) => {
+    .then(response => response.json())
+    .then((responseData) => 
+    {if (responseData.msg.includes("error")) { return null} else {
           this.setState({
-            currentUser: response,
-            key: response.key,
-            loggedIn: true
-      })
-    })
+            userKey: {key: responseData.key},
+            loggedIn: true,
+            currentUser: newUserCredentials,
+            mainView: "dashboardView"
+    });
+    
+        this.getAllUsers();
+      }
+    });
   }
 
   handleNewArticle = (userTitleInput, userBodyInput) => {
 
     let newArticleCredentials = {
       title: userTitleInput,
-      body: userBodyInput
+      body: userBodyInput,
+      key: this.state.userKey.key
     };
+
+    fetch(API + `/Article/Create`, {
+      method: 'POST',
+      body: newArticleCredentials,
+      headers: { 
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
+    }
+    })
+    .then(response => response.json())
+    .then((responseData) => 
+    {if (responseData.msg.includes("error")) { return null } else {
+    //       this.setState({
+    //         allArticles: [this.state.allArticles, responseData],
+    //         mainView: "dashboardView"
+    // });
+        console.log(responseData)
+      }
+      this.getAllArticles();
+
+    });
+
+
+
 
     fetch(API + `/Article/Create`, {
       headers: {
@@ -128,7 +171,7 @@ class App extends React.Component {
     .then((newArticleEntry) => {
         if (!newArticleEntry.includes("error")) {
           this.setState({
-          allArticlessData: [...this.state.allArticlesData, newArticleEntry]
+          allArticles: [...this.state.allArticles, newArticleEntry]
       })
     } else {console.log("error")}
     })
@@ -137,7 +180,7 @@ class App extends React.Component {
   handleLogout = () => {
 
     let logoutKey = {
-      key: this.state.key
+      key: this.state.userKey
     }
 
     fetch(API + `/Article/Create`, {
@@ -153,7 +196,7 @@ class App extends React.Component {
         if (!logoutResponse.includes("error")) {
           this.setState({
           currentUser: null,
-          key: "",
+          userKey: "",
           loggedIn: false,
           mainView: "loginForm"
       })
@@ -183,9 +226,15 @@ class App extends React.Component {
 // }
 
   changeMainView = (changeKey) => {
-    this.setState({
-      mainView: changeKey
-    });
+    if (changeKey === "dashboardView") {
+        this.setState({
+        mainView: changeKey
+      });
+    } else {
+      this.setState({
+        mainView: changeKey
+      });
+    }
   }
 
   render(){
@@ -197,17 +246,18 @@ class App extends React.Component {
           changeMainView={this.changeMainView} 
         />
         <MainContainer 
-          allArticles={this.state.allArticlesData}
+          allArticles={this.state.allArticles}
           allUsers={this.state.allUsersData}
           loggedIn={this.state.loggedIn} 
           mainView={this.state.mainView} 
           currentUser={this.state.currentUser}
-          key={this.state.key}
+          userKey={this.state.userKey}
           handleUserCreation={this.handleUserCreation}
           handleLoginSubmit={this.handleLoginSubmit}
           handleNewArticle={this.handleNewArticle}
           handleArticleDelete={this.handleArticleDelete}
           changeMainView={this.changeMainView}
+          getAllArticles={this.getAllArticles}
         />
         <FooterComponent />
       </div>
