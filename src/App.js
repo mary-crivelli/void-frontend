@@ -3,8 +3,9 @@ import './App.css';
 import MainContainer from './containers/MainContainer.js';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
+require('dotenv').config();
 
-const API = 'http://localhost:9080'
+const API = process.env.REACT_APP_API_URL
 
 class App extends React.Component {
 
@@ -157,7 +158,7 @@ class App extends React.Component {
       "userName": this.state.currentUser.userName,
       "key": this.state.userKey.key
     }
-    
+
     fetch(API + `/User/Logout`, {
       headers: { 
         'Accept': '*/*',
