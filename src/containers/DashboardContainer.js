@@ -14,6 +14,7 @@ class DashboardContainer extends React.Component {
                 <ArticlesContainer
                     allArticles={this.props.allArticles}
                     allUsers={this.props.allUsers}
+                    handleArticleDelete={this.props.handleArticleDelete}
                 />
             </div>
         )

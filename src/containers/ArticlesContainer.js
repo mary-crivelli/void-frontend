@@ -6,7 +6,7 @@ class ArticlesContainer extends React.Component {
     render(){
         return(
             <div className="articles-container">
-                {this.props.allArticles.map((article) => 
+                {this.props.allArticles.reverse().map((article) => 
                 <ArticleComponent 
                 // username={article.author}
                 title={article.title} 

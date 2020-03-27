@@ -1,12 +1,17 @@
 import React from 'react';
 
 class HeaderComponent extends React.Component {
+
+    // handleClick = (event) => {
+    //     this.props.handleLogout()
+    // }
+
     render(){
         return (
             <div className="header-component">
                 <h1>The Void</h1>
-                {this.props.loggedIn ? <div><button>@{this.props.currentUser.username}</button>
-                <button>Logout</button></div> : null}
+                {this.props.loggedIn ? <div><button>@{this.props.currentUser.userName}</button>
+                <button onClick={this.props.handleLogout}>Logout</button></div> : null}
                 <hr />
             </div>
         )
