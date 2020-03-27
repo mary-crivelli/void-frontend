@@ -56,7 +56,7 @@
 }
 
 .login-form-component {
-  
+  margin-left: 5%
 }
 
 .general-button {
@@ -169,6 +169,10 @@
   outline: 0px;
   padding-left: 5px;
   width: 740px;
+}
+
+.new-user-form-component {
+  margin-left: 5%;
 }
 
 .new-user-form-component button {
