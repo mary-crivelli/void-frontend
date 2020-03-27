@@ -34,13 +34,14 @@ class LoginFormComponent extends React.Component {
                     <br />
                     <label htmlFor="password">Password:</label>
                     <input 
+                        type="password"
                         name="passwordInput" 
-                        placeholder="**********"
+                        placeholder="••••••••"
                         value={this.state.passwordInput}
                         onChange={this.handleChange}
                     />
                     <br /> 
-                    <input type="submit" className="general-button"/>
+                    <input type="submit" className="general-button" value="Submit"/>
                 </form>
                 <button className="link-button" onClick={() => this.props.changeMainView("signupForm")}>First time here? Create an account.</button>
             </div>

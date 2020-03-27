@@ -1,5 +1,11 @@
-.dashboard-container {
+.App {
+  position: relative;
+  min-height: 100vh;
+}
 
+
+.dashboard-container {
+  
 }
 
 .main-container {
@@ -15,6 +21,11 @@
 }
 
 .footer-component {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  opacity: .4;
 }
 
 .footer-component h1 {
@@ -56,7 +67,8 @@
 }
 
 .login-form-component {
-  margin-left: 5%
+  width: 800px;
+  margin-left: 25%;
 }
 
 .general-button {
@@ -172,7 +184,8 @@
 }
 
 .new-user-form-component {
-  margin-left: 5%;
+  width: 800px;
+  margin-left: 25%;
 }
 
 .new-user-form-component button {

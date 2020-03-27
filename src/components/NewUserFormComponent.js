@@ -35,13 +35,14 @@ class NewUserFormComponent extends React.Component {
                      <br />
                      <label htmlFor="password">Password:</label>
                      <input 
+                         type="password"
                          name="passwordInput" 
-                         placeholder="**********"
+                         placeholder="••••••••"
                          value={this.state.passwordInput}
                          onChange={this.handleChange}
                      />
                      <br /> 
-                     <input type="submit" className="general-button"/>
+                     <input type="submit" className="general-button" value="Submit"/>
                  </form>
              </div>
          )

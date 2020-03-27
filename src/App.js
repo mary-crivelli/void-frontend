@@ -153,6 +153,10 @@ class App extends React.Component {
   }
 
   handleLogout = () => {
+    let logoutCredentials = {
+      "userName": this.state.currentUser.userName,
+      "key": this.state.userKey.key
+    }
     
     fetch(API + `/User/Logout`, {
       headers: { 
@@ -160,7 +164,7 @@ class App extends React.Component {
         'Content-Type': 'application/json'
     },
       method: 'POST',
-      body: JSON.stringify(this.state.userKey)
+      body: JSON.stringify(logoutCredentials)
     })
     .then(response => response.json())
     .then((logoutResponse) => {
