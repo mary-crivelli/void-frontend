@@ -134,10 +134,10 @@ class App extends React.Component {
       body: userBodyInput,
       key: this.state.userKey.key
     };
-
+    console.log(newArticleCredentials);
     fetch(API + `/Article/Create`, {
       method: 'POST',
-      body: newArticleCredentials,
+      body: JSON.stringify(newArticleCredentials),
       headers: { 
         'Accept': '*/*',
         'Content-Type': 'application/json'
@@ -146,35 +146,16 @@ class App extends React.Component {
     .then(response => response.json())
     .then((responseData) => 
     {if (responseData.msg.includes("error")) { return null } else {
-    //       this.setState({
-    //         allArticles: [this.state.allArticles, responseData],
-    //         mainView: "dashboardView"
-    // });
+          this.setState({
+            allArticles: [this.state.allArticles, responseData],
+            mainView: "dashboardView"
+    });
         console.log(responseData)
       }
       this.getAllArticles();
 
     });
 
-
-
-
-    fetch(API + `/Article/Create`, {
-      headers: {
-        'Accept': 'application/json', 
-        'Content-Type': 'application/json'
-      }, 
-      method: 'POST',
-      body: JSON.stringify(newArticleCredentials)
-    })
-    .then(response => response.json())
-    .then((newArticleEntry) => {
-        if (!newArticleEntry.includes("error")) {
-          this.setState({
-          allArticles: [...this.state.allArticles, newArticleEntry]
-      })
-    } else {console.log("error")}
-    })
   }
 
   handleLogout = () => {
@@ -183,7 +164,7 @@ class App extends React.Component {
       key: this.state.userKey
     }
 
-    fetch(API + `/Article/Create`, {
+    fetch(API + `/User/Logout`, {
       headers: {
         'Accept': 'application/json', 
         'Content-Type': 'application/json'
