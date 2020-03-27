@@ -62,7 +62,7 @@ class NewArticleFormComponent extends React.Component {
                             onChange={this.handleChange} 
                         />
                         <br /> 
-                        <input type="submit" />
+                        <input className="submit-btn" type="submit" />
                         <br />
                         <button onClick={this.newArticleFormToggle}>Cancel</button>
                     </form>

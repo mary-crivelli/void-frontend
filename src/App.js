@@ -153,7 +153,6 @@ class App extends React.Component {
   }
 
   handleLogout = () => {
-
     
     fetch(API + `/User/Logout`, {
       headers: { 

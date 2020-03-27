@@ -148,6 +148,10 @@
   margin-bottom: 10px;
 }
 
+.new-article-form-component .submit-btn {
+  margin-left: 25%;
+}
+
 .new-article-form-component textarea {
   background-color: rgb(252, 252, 251);
   border-width: 1px;
