@@ -5,7 +5,8 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 require('dotenv').config();
 
-const API = process.env.REACT_APP_API_URL
+const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:fail";
+console.log(API);
 
 class App extends React.Component {
 
@@ -96,14 +97,14 @@ class App extends React.Component {
   }
 
   handleUserCreation = (usernameInput, passwordInput) => {
-    let newUserCredentials = JSON.stringify({
+    let newUserCredentials = {
       userName: usernameInput, 
       password: passwordInput
-    });
+    };
 
     fetch(API + `/User/Create`, {
       method: 'POST',
-      body: newUserCredentials,
+      body: JSON.stringify(newUserCredentials),
       headers: { 
         'Accept': '*/*',
         'Content-Type': 'application/json'
