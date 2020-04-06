@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontend-deploy
+    version: v1
+  name: frontend-deploy
+  namespace: thevoid-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-deploy
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      creationTimestamp: null
+      labels:
+        app: frontend-deploy
+        version: v1
+    spec:
+      containers:
+      - image: dennismila/void-frontend:1.1
+        name: void-frontend
+        resources: {}
+        ports:
+        - containerPort: 3000
+        env:
+        - name: BACKEND_URL
+          valueFrom:
+            configMapKeyRef:
+              name: void-config
+              key: BACKEND_URL
+status: {}

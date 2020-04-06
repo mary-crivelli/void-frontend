@@ -1,1 +1,1 @@
-URL_API=$BACKEND_URL npm start
+REACT_APP_API_URL=$BACKEND_URL npm start
