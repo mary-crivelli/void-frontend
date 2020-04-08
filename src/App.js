@@ -5,7 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 require('dotenv').config();
 
-const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:fail";
+const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:9080";
 console.log(API);
 
 class App extends React.Component {
@@ -120,7 +120,7 @@ class App extends React.Component {
             mainView: "dashboardView"
     });
     
-        this.getAllUsers();
+        this.getAllArticles();
       }
     });
   }

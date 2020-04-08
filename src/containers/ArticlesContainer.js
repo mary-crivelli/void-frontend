@@ -7,14 +7,14 @@ class ArticlesContainer extends React.Component {
         return(
             <div className="articles-container">
                 {this.props.allArticles.reverse().map((article) => 
-                <ArticleComponent 
-                // username={article.author}
-                title={article.title} 
-                body={article.body} 
-                handleArticleDelete={this.props.handleArticleDelete}
-                // key={article.id}
-                // date={article.date} 
-                />)}
+                    <ArticleComponent 
+                        username={article.author}
+                        title={article.title} 
+                        body={article.body} 
+                        handleArticleDelete={this.props.handleArticleDelete}
+                        // key={article.id}
+                        // date={article.date} 
+                    />)}
             </div>
         )
     }
