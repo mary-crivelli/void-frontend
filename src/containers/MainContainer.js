@@ -28,6 +28,7 @@ class MainContainer extends React.Component {
                 changeMainView={this.props.changeMainView}
                 allArticles={this.props.allArticles}
                 allUsers={this.props.allUsers}
+                currentUser={this.props.currentUser}
                 handleArticleDelete={this.props.handleArticleDelete}
                 userKey={this.props.userKey}
                 />;

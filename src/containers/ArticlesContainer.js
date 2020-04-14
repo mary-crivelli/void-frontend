@@ -12,6 +12,7 @@ class ArticlesContainer extends React.Component {
                         title={article.title} 
                         body={article.body} 
                         handleArticleDelete={this.props.handleArticleDelete}
+                        currentUser={this.props.currentUser}
                         // key={article.id}
                         // date={article.date} 
                     />)}

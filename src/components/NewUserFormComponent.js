@@ -22,7 +22,7 @@ class NewUserFormComponent extends React.Component {
      render(){
          return (
             <div className="new-user-form-component">
-                <h1>Sign up for an account here:</h1>
+                <h1>Create an account:</h1>
                  <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                      <label htmlFor="username">Username:</label>
                      <input 

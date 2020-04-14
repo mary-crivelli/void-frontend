@@ -22,6 +22,7 @@ class LoginFormComponent extends React.Component {
     render(){
         return (
            <div className="login-form-component">
+               <h1>Welcome back. Sign in:</h1>
                 <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                     <label htmlFor="username">Username:</label>
                     <input 

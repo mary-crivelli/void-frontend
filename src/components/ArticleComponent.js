@@ -14,7 +14,7 @@ class ArticleComponent extends React.Component {
                 <h1>{this.props.title}</h1>
                 <h2>{this.props.username}</h2>
                 <p>{this.props.body}</p>
-                <button onClick={this.handleDelete}>delete</button>
+                {this.props.currentUser.userName !== this.props.username ? null :<button onClick={this.handleDelete}>delete</button>}
             </div>
         )
     }

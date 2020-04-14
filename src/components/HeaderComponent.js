@@ -6,7 +6,7 @@ class HeaderComponent extends React.Component {
         return (
             <div className="header-component">
                 <h1>The Void</h1>
-                {this.props.loggedIn ? <div><button>@{this.props.currentUser.userName}</button>
+                {this.props.loggedIn ? <div>Now logged in as: <b>{this.props.currentUser.userName}</b>
                 <button onClick={() => this.props.handleLogout()}>Logout</button></div> : null}
                 <hr />
             </div>
