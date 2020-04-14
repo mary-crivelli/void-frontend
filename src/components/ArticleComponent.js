@@ -12,6 +12,7 @@ class ArticleComponent extends React.Component {
         return (
             <div className="article-component">
                 <h1>{this.props.title}</h1>
+                <h2>{this.props.username}</h2>
                 <p>{this.props.body}</p>
                 <button onClick={this.handleDelete}>delete</button>
             </div>
