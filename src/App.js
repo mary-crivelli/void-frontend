@@ -224,7 +224,6 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1 className="title">The Void</h1>
         <HeaderComponent 
           currentUser={this.state.currentUser}
           loggedIn={this.state.loggedIn}

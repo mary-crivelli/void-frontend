@@ -46,6 +46,7 @@ class NewArticleFormComponent extends React.Component {
                 {this.state.newArticleButtonClicked ? 
                     <div>
                         <button onClick={this.newArticleFormToggle}>New Article</button>
+                        {/* <hr className="new-article-line"/> */}
                     </div> 
                 : <div>
                     
