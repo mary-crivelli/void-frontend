@@ -53,7 +53,7 @@ class App extends React.Component {
     .then(response => response.json())
     .then(allArticlesData => {
     if (allArticlesData.msg.includes("error")) {
-      console.log("error")
+      alert('There was an error fetching articles. Please try again.');
       } else {
         this.setState({
           allArticles: allArticlesData.articles
@@ -90,7 +90,7 @@ class App extends React.Component {
       });
       this.getAllArticles();
     } else {
-      console.log("error")
+      alert('There was an error logging in. Please try again.');
       this.setState({
         currentUser: null
       })
@@ -114,7 +114,7 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then((responseData) => 
-    {if (responseData.msg.includes("error")) { return null} else {
+    {if (responseData.msg.includes("error")) { alert('There was an error creating your account. Please try again.'); } else {
           this.setState({
             userKey: {key: responseData.key},
             loggedIn: true,
@@ -144,7 +144,7 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then((responseData) => 
-    {if (responseData.msg.includes("error")) { return null } else {
+    {if (responseData.msg.includes("error")) { alert('There was an error creating a new article. Please try again.'); } else {
           this.setState({
             allArticles: [this.state.allArticles, responseData],
             mainView: "dashboardView"
@@ -179,7 +179,7 @@ class App extends React.Component {
           loggedIn: false,
           mainView: "loginForm"
       })
-    } else {console.log("error")}
+    } else {alert('There was an error logging you out. Please try again.');}
     })
   }
 
@@ -200,7 +200,7 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then((responseResults) => { 
-      if (responseResults.msg.includes("error")) {console.log("error")
+      if (responseResults.msg.includes("error")) { alert('There was an error deleting this article. Please try again.');
     } else {
         this.setState({
           allArticles: this.state.allArticles.filter(article => article.title !== credentialsToDelete.title && article.body !== credentialsToDelete.body).reverse()
