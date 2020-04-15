@@ -90,7 +90,7 @@ class App extends React.Component {
       });
       this.getAllArticles();
     } else {
-      alert('There was an error logging in. Please try again.');
+      alert('Username/password incorrect. Please try again.');
       this.setState({
         currentUser: null
       })
@@ -224,6 +224,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
+        <h1 className="title">The Void</h1>
         <HeaderComponent 
           currentUser={this.state.currentUser}
           loggedIn={this.state.loggedIn}

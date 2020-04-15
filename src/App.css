@@ -1,8 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap");
+
+
 .App {
   position: relative;
   min-height: 100vh;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
 }
 
+.title {
+  text-align: left;
+  color: white;
+  background-color: #0f62fe;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  border-bottom: 1.5px solid;
+  border-bottom-color: black;
+}
 
 .article-component button {
   border-radius: 4px;
@@ -31,7 +47,7 @@
 }
 
 .article-title {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   padding-left: 30px;
   padding-top: 20px;
@@ -46,8 +62,9 @@
 
 
 .dashboard-container {
-  margin-left: 25%;
-  padding-top: 160px;
+  margin-left: 27%;
+  width: 50%;
+  padding-top: 110px;
 }
 
 .articles-container {
@@ -98,9 +115,9 @@
 }
 
 .login-form-component {
+  padding-top: 20px;
   width: 800px;
   margin-left: 25%;
-  padding-top: 110px;
 }
 
 .general-button {
@@ -204,9 +221,9 @@
 }
 
 .new-user-form-component {
+  padding-top: 20px;
   width: 800px;
   margin-left: 25%;
-  padding-top: 110px;
 }
 
 .new-user-form-component button {
@@ -257,14 +274,20 @@
   border: 1px solid grey;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  overflow: hidden;
+  overflow: scroll;
   border-radius: 4px;
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18); 
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
+  max-height: 350px;
+}
+
+.article-component hr {
+  width: 640px;
+  opacity: 2;
 }
 
 .article-component p {
-  font-size: 17px;
+  font-size: 15px;
   padding-left: 30px;
   padding-right: 30px;
 }

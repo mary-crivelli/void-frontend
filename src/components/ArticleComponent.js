@@ -14,6 +14,7 @@ class ArticleComponent extends React.Component {
                 <div>
                 <div className="article-title">{this.props.title}</div> <div className="article-author">Posted by {this.props.username}</div>
                 </div>
+                <hr/>
                 <p>{this.props.body}</p>
                 {this.props.currentUser.userName !== this.props.username ? null :<button onClick={this.handleDelete}>Delete</button>}
             </div>
