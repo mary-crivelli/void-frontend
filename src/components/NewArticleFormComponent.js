@@ -29,7 +29,13 @@ class NewArticleFormComponent extends React.Component {
       }
   
       handleSubmit = (event) => {
-          event.preventDefault();
+        event.preventDefault();
+
+        this.setState(state => ({
+            newArticleButtonClicked: !state.newArticleButtonClicked
+          }));
+
+          
           this.props.handleNewArticle(this.state.titleInput, this.state.bodyInput);
       }
 
@@ -64,7 +70,7 @@ class NewArticleFormComponent extends React.Component {
                         <br /> 
                         <input className="submit-btn" type="submit" />
                         <br />
-                        <button onClick={this.newArticleFormToggle}>Cancel</button>
+                        <button className="delete-button" onClick={this.newArticleFormToggle}>Cancel</button>
                     </form>
                 </div>}
             </div>

@@ -11,10 +11,11 @@ class ArticleComponent extends React.Component {
     render(){
         return (
             <div className="article-component">
-                <div><h1>{this.props.title}</h1>
-                <h2>{this.props.username}</h2></div>
+                <div>
+                <div className="article-title">{this.props.title}</div> <div className="article-author">Posted by {this.props.username}</div>
+                </div>
                 <p>{this.props.body}</p>
-                {this.props.currentUser.userName !== this.props.username ? null :<button onClick={this.handleDelete}>delete</button>}
+                {this.props.currentUser.userName !== this.props.username ? null :<button onClick={this.handleDelete}>Delete</button>}
             </div>
         )
     }

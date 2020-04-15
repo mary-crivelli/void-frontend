@@ -18,6 +18,31 @@
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
   margin-left:90%;
   color:red;
+  font-weight: 500;
+}
+
+.delete-button {
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  color:red;
+}
+
+.article-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.article-author {
+  color: grey;
+  font-size: 10px;
+  padding-left: 30px;
+  padding-top: 0px;
 }
 
 
@@ -28,6 +53,7 @@
 
 .articles-container {
   width: 80%;
+  padding-bottom: 8%;
 }
 
 .user-profile-container {
@@ -62,18 +88,6 @@
 .header-component button {
   margin-right: 40px;
   margin-left: 90%;
-
-  border-radius: 4px;
-  margin-bottom: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
 }
 
 .link-button {
@@ -88,10 +102,6 @@
   width: 800px;
   margin-left: 25%;
   padding-top: 110px;
-}
-
-.login-form-component button {
-  
 }
 
 .general-button {
@@ -134,14 +144,6 @@
     padding-left: 5px;
     display: inline-block;
     margin-bottom: 10px;
-}
-
-.main-container {
-  
-}
-
-.new-article-form-component {
-  
 }
 
 .new-article-form-component button {
@@ -247,6 +249,10 @@
   margin-bottom: 10px;
 }
 
+.new-article-form-component form {
+  padding-bottom: 30px;
+}
+
 .article-component {
   width: 740px;
   border: 1px solid grey;
@@ -258,8 +264,9 @@
 }
 
 .article-component p {
-  font-size: 20px;
+  font-size: 17px;
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 .article-component h1 {

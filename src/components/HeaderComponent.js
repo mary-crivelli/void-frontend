@@ -7,7 +7,7 @@ class HeaderComponent extends React.Component {
             <div className="header-component">
                 <h1>The Void</h1>
                 {this.props.loggedIn ? <div>Now logged in as: <b>{this.props.currentUser.userName}</b>
-                <button onClick={() => this.props.handleLogout()}>Logout</button></div> : null}
+                <button className="general-button" onClick={() => this.props.handleLogout()}>Logout</button></div> : null}
                 <hr />
             </div>
         )
