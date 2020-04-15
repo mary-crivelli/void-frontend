@@ -203,7 +203,7 @@ class App extends React.Component {
       if (responseResults.msg.includes("error")) {console.log("error")
     } else {
         this.setState({
-          allArticles: this.state.allArticles.filter(article => article.title !== credentialsToDelete.title && article.body !== credentialsToDelete.body)
+          allArticles: this.state.allArticles.filter(article => article.title !== credentialsToDelete.title && article.body !== credentialsToDelete.body).reverse()
         });
     }
   })
