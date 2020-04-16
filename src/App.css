@@ -104,6 +104,10 @@
   font-size: 13px;
 }
 
+.footer-component a {
+  color: black;
+}
+
 .header-component {
   width: 740px;
   height: 60px;
