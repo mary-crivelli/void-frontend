@@ -44,8 +44,9 @@ class NewUserFormComponent extends React.Component {
                          onChange={this.handleChange}
                      />
                      <br /> 
-                     <input type="submit" className="general-button" value="Submit"/>
+                     <input type="submit" className="primary-button" id="general" value="Submit"/>
                  </form>
+                 <button className="link-button" onClick={() => this.props.changeMainView("loginForm")}>Already have an account? Login here.</button>
              </div>
          )
      }

@@ -23,24 +23,6 @@
   background-color: white;
 }
 
-.article-component button {
-  margin-left: 80%;
-  margin-bottom: 10px;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #da1e28;
-  border: none;
-  color: white;
-}
-
-.article-component button:hover {
-  background-color: #b81921;
-  color: white;
-}
-
 .article-component h1 {
   font-size: 30px;
   font-weight: bold;
@@ -89,8 +71,7 @@
   padding-top: 100px;
 }
 
-.delete-button {
-  margin-bottom: 10px;
+.danger-button {
   padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
@@ -101,9 +82,13 @@
   color: white;
 }
 
-.delete-button:hover {
+.danger-button:hover {
   background-color: #b81921;
   color: white;
+}
+
+#delete-article {
+  margin-left: 80%;
 }
 
 .footer-component {
@@ -117,24 +102,6 @@
 .footer-component h1 {
   text-align: center;
   font-size: 13px;
-}
-
-.general-button {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #0f62fe;
-  border: none;
-  color: white;
-}
-
-.general-button:hover {
-  background-color: #0353e9;
-  color: white;
 }
 
 .header-component {
@@ -167,24 +134,6 @@
   padding-top: 20px;
   width: 800px;
   margin-left: 25%;
-}
-
-
-.logout-button {
-  margin-left: 70%;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #0f62fe;
-  border: none;
-  color: white;
-}
-
-.logout-button:hover {
-  background-color: #0353e9;
-  color: white;
 }
 
 .login-form-component label {
@@ -261,21 +210,6 @@
   margin-left: 25%;
 }
 
-.new-user-form-component button {
-  margin-left: 10px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
-}
-
 .new-user-form-component label {
   margin-left: 10px;
   display: inline-block;
@@ -309,8 +243,7 @@
   margin-bottom: 25px;
 }
 
-.submit-btn {
-  margin-bottom: 15px;
+.primary-button {
   padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
@@ -321,9 +254,22 @@
   color: white;
 }
 
-.submit-btn:hover {
+.primary-button:hover {
   background-color: #0353e9;
   color: white;
+}
+
+#logout {
+  margin-left: 70%;
+}
+
+#submit {
+  margin-bottom: 15px;
+}
+
+#general {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .title {

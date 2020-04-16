@@ -45,7 +45,7 @@ class NewArticleFormComponent extends React.Component {
             <div className="new-article-form-component">
                 {this.state.newArticleButtonClicked ? 
                     <div>
-                        <button className="submit-btn" onClick={this.newArticleFormToggle}>New Article</button>
+                        <button className="primary-button" id="submit" onClick={this.newArticleFormToggle}>New Article</button>
                         {/* <hr className="new-article-line"/> */}
                     </div> 
                 : <div>
@@ -71,9 +71,9 @@ class NewArticleFormComponent extends React.Component {
                             onChange={this.handleChange} 
                         />
                         <br /> 
-                        <input className="submit-btn" type="submit" />
+                        <input className="primary-button" id="submit" type="submit" />
                         <br />
-                        <button className="delete-button" onClick={this.newArticleFormToggle}>Cancel</button>
+                        <button className="danger-button" onClick={this.newArticleFormToggle}>Cancel</button>
                     </form>
                 </div>}
             </div>
