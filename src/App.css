@@ -10,26 +10,17 @@
   background-color: #f4f4f4;
 }
 
-.title {
-  text-align: left;
-  color: white;
-  background-color: black;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 11px;
-  padding-left: 20px;
-  border-bottom: 1.5px solid;
-  border-bottom-color: white;
-}
-
-.title h1 {
-  display: contents;
-  font-weight: 400;
-}
-
-.title span {
-  font-size: 30px;
-  margin-left: 70%;
+.article-component {
+  width: 740px;
+  border: 1px solid grey;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  overflow: scroll;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18); 
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
+  max-height: 350px;
+  background-color: white;
 }
 
 .article-component button {
@@ -43,7 +34,6 @@
   background-color: #da1e28;
   border: none;
   color: white;
-
 }
 
 .article-component button:hover {
@@ -51,30 +41,27 @@
   color: white;
 }
 
-.delete-button {
-
-  margin-bottom: 10px;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #da1e28;
-  border: none;
-  color: white;
-
-}
-
-.delete-button:hover {
-  background-color: #b81921;
-  color: white;
-}
-
-.article-title {
-  font-size: 22px;
+.article-component h1 {
+  font-size: 30px;
   font-weight: bold;
   padding-left: 30px;
-  padding-top: 20px;
+  padding-top: 0px;
+}
+
+.article-component h2 {
+  font-size: 15px;
+  padding-left: 30px;
+}
+
+.article-component hr {
+  width: 640px;
+  opacity: 2;
+}
+
+.article-component p {
+  font-size: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .article-author {
@@ -84,11 +71,11 @@
   padding-top: 0px;
 }
 
-
-.dashboard-container {
-  margin-left: 27%;
-  width: 50%;
-  padding-top: 100px;
+.article-title {
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 20px;
 }
 
 .articles-container {
@@ -96,8 +83,27 @@
   padding-bottom: 8%;
 }
 
-.user-profile-container {
+.dashboard-container {
+  margin-left: 27%;
+  width: 50%;
+  padding-top: 100px;
+}
 
+.delete-button {
+  margin-bottom: 10px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-family: IBM Plex Sans;
+  background-color: #da1e28;
+  border: none;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #b81921;
+  color: white;
 }
 
 .footer-component {
@@ -111,6 +117,24 @@
 .footer-component h1 {
   text-align: center;
   font-size: 13px;
+}
+
+.general-button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-family: IBM Plex Sans;
+  background-color: #0f62fe;
+  border: none;
+  color: white;
+}
+
+.general-button:hover {
+  background-color: #0353e9;
+  color: white;
 }
 
 .header-component {
@@ -143,24 +167,6 @@
   padding-top: 20px;
   width: 800px;
   margin-left: 25%;
-}
-
-.general-button {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #0f62fe;
-  border: none;
-  color: white;
-}
-
-.general-button:hover {
-  background-color: #0353e9;
-  color: white;
 }
 
 
@@ -208,7 +214,6 @@
     margin-bottom: 10px;
 }
 
-
 .new-article-form-component label {
   padding-right: 10px;
   margin-bottom: 10px;
@@ -230,23 +235,6 @@
   padding-left: 5px;
   display: inline-block;
   margin-bottom: 10px;
-}
-
-.submit-btn {
-  margin-bottom: 15px;
-  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: IBM Plex Sans;
-  background-color: #0f62fe;
-  border: none;
-  color: white;
-}
-
-.submit-btn:hover {
-  background-color: #0353e9;
-  color: white;
 }
 
 .new-article-form-component textarea {
@@ -321,42 +309,41 @@
   margin-bottom: 25px;
 }
 
-.article-component {
-  width: 740px;
-  border: 1px solid grey;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  overflow: scroll;
-  border-radius: 4px;
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18); 
-  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
-  max-height: 350px;
-  background-color: white;
+.submit-btn {
+  margin-bottom: 15px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-family: IBM Plex Sans;
+  background-color: #0f62fe;
+  border: none;
+  color: white;
 }
 
-.article-component hr {
-  width: 640px;
-  opacity: 2;
+.submit-btn:hover {
+  background-color: #0353e9;
+  color: white;
 }
 
-.article-component p {
-  font-size: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+.title {
+  text-align: left;
+  color: white;
+  background-color: black;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 11px;
+  padding-left: 20px;
+  border-bottom: 1.5px solid;
+  border-bottom-color: white;
 }
 
-.article-component h1 {
+.title h1 {
+  display: contents;
+  font-weight: 400;
+}
+
+.title span {
   font-size: 30px;
-  font-weight: bold;
-  padding-left: 30px;
-  padding-top: 0px;
-}
-
-.article-component h2 {
-  font-size: 15px;
-  padding-left: 30px;
-}
-
-.user-profile-component {
-  
+  margin-left: 70%;
 }
