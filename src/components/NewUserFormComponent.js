@@ -26,6 +26,7 @@ class NewUserFormComponent extends React.Component {
                  <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                      <label htmlFor="username">Username:</label>
                      <input 
+                     className="new-user-form-input"
                          type="text" 
                          name="usernameInput"
                          placeholder="Username"
@@ -35,6 +36,7 @@ class NewUserFormComponent extends React.Component {
                      <br />
                      <label htmlFor="password">Password:</label>
                      <input 
+                     className="new-user-form-input"
                          type="password"
                          name="passwordInput" 
                          placeholder="••••••••"

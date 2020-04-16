@@ -7,22 +7,24 @@
   min-height: 100vh;
   font-family: IBM Plex Sans;
   font-weight: 400;
+  background-color: #f4f4f4;
 }
 
 .title {
   text-align: left;
   color: white;
-  background-color: #0f62fe;
+  background-color: black;
   margin-top: 0px;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 11px;
   padding-left: 20px;
   border-bottom: 1.5px solid;
-  border-bottom-color: black;
+  border-bottom-color: white;
 }
 
 .title h1 {
   display: contents;
+  font-weight: 400;
 }
 
 .title span {
@@ -31,29 +33,41 @@
 }
 
 .article-component button {
-  border-radius: 4px;
+  margin-left: 80%;
   margin-bottom: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
-  margin-left:90%;
-  color:red;
+  font-family: IBM Plex Sans;
+  background-color: #da1e28;
+  border: none;
+  color: white;
+
+}
+
+.article-component button:hover {
+  background-color: #b81921;
+  color: white;
 }
 
 .delete-button {
-  border-radius: 4px;
+
+  margin-bottom: 10px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
-  color:red;
+  font-family: IBM Plex Sans;
+  background-color: #da1e28;
+  border: none;
+  color: white;
+
+}
+
+.delete-button:hover {
+  background-color: #b81921;
+  color: white;
 }
 
 .article-title {
@@ -74,7 +88,7 @@
 .dashboard-container {
   margin-left: 27%;
   width: 50%;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .articles-container {
@@ -101,7 +115,7 @@
 
 .header-component {
   width: 740px;
-  height: 125px;
+  height: 60px;
   position: absolute;
   margin-left: 27%;
   margin-top: 30px;
@@ -122,6 +136,7 @@
   color: blue;
   text-decoration: underline;
   text-underline-position: below;
+  background-color: #f4f4f4;
 }
 
 .login-form-component {
@@ -132,32 +147,38 @@
 
 .general-button {
   margin-left: 10px;
-  border-radius: 4px;
   margin-bottom: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  font-family: IBM Plex Sans;
+  background-color: #0f62fe;
+  border: none;
+  color: white;
 }
+
+.general-button:hover {
+  background-color: #0353e9;
+  color: white;
+}
+
 
 .logout-button {
   margin-left: 70%;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  font-family: IBM Plex Sans;
+  background-color: #0f62fe;
+  border: none;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #0353e9;
+  color: white;
 }
 
 .login-form-component label {
@@ -170,7 +191,7 @@
   font-weight: 600;
 }
 
-.login-form-component input {
+.login-form-input {
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
@@ -187,19 +208,6 @@
     margin-bottom: 10px;
 }
 
-.new-article-form-component button {
-  border-radius: 4px;
-  margin-bottom: 15px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1); 
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
-}
 
 .new-article-form-component label {
   padding-right: 10px;
@@ -207,7 +215,7 @@
   font-weight: 600;
 }
 
-.new-article-form-component input {
+.new-article-form-input {
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -224,7 +232,21 @@
   margin-bottom: 10px;
 }
 
-.new-article-form-component .submit-btn {
+.submit-btn {
+  margin-bottom: 15px;
+  padding: calc(.875rem - 3px) 60px calc(.875rem - 3px) 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-family: IBM Plex Sans;
+  background-color: #0f62fe;
+  border: none;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #0353e9;
+  color: white;
 }
 
 .new-article-form-component textarea {
@@ -273,7 +295,7 @@
   margin-right: 7px;
 }
 
-.new-user-form-component input {
+.new-user-form-input {
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -309,6 +331,7 @@
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18); 
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.18);
   max-height: 350px;
+  background-color: white;
 }
 
 .article-component hr {

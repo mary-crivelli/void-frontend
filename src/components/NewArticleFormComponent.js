@@ -45,7 +45,7 @@ class NewArticleFormComponent extends React.Component {
             <div className="new-article-form-component">
                 {this.state.newArticleButtonClicked ? 
                     <div>
-                        <button onClick={this.newArticleFormToggle}>New Article</button>
+                        <button className="submit-btn" onClick={this.newArticleFormToggle}>New Article</button>
                         {/* <hr className="new-article-line"/> */}
                     </div> 
                 : <div>
@@ -53,6 +53,7 @@ class NewArticleFormComponent extends React.Component {
                     <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                         <label htmlFor="title">Title:</label>
                         <input 
+                        className="new-article-form-input"
                             type="text" 
                             name="titleInput"
                             placeholder="Title"
@@ -63,6 +64,7 @@ class NewArticleFormComponent extends React.Component {
                         <label htmlFor="body">Body:</label>
                         <br />
                         <textarea 
+                        className="new-article-form-input"
                             name="bodyInput"
                             placeholder="Body text here..."
                             value={this.state.bodyInput}
