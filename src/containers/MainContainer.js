@@ -33,7 +33,7 @@ class MainContainer extends React.Component {
                 userKey={this.props.userKey}
                 />;
         } else {
-            console.log("state error mainView");
+            alert("State error in main view. Contact admin for further steps.");
         }
 
         return(
