@@ -5,9 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 require('dotenv').config();
 
-// const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:9080";
-
-const API = "http://backend-service-thevoid-test.cpat-dev-sandbox-ocp435-afb9c6047b062b44e3f1b3ecfeba4309-0000.sjc03.containers.appdomain.cloud/";
+const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:9080";
 
 class App extends React.Component {
 
@@ -120,7 +118,6 @@ class App extends React.Component {
             currentUser: newUserCredentials,
             mainView: "dashboardView"
     });
-    
         this.getAllArticles();
       }
     });
