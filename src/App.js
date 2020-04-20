@@ -5,7 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 require('dotenv').config();
 
-const API = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:9080";
+const API = window.REACT_APP_API_URL ? window.REACT_APP_API_URL : "http://localhost:9080";
 
 class App extends React.Component {
 

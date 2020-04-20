@@ -1,7 +1,4 @@
-FROM node:13.12-alpine
-
-ARG VERSION=1.0
-ARG REVISION=SNAPSHOT
+FROM node:13.1.0 as builder
 
 LABEL \
   org.opencontainers.image.authors="Dillon Carns & Mary Crivelli & Dennis Mila" \
@@ -16,11 +13,20 @@ LABEL \
   summary="The frontend microservice" \
   description="This image contains the void microservice running with the ReactJS runtime."
 
-WORKDIR /app
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+COPY package*.json ./
+RUN npm install --silent
+RUN npm install react-scripts@3.4.0 -g --silent
+COPY . /usr/src/app
+RUN npm run build
 
-COPY . .
+FROM nginx:1.14.1-alpine
+# RUN rm -rf /etc/nginx/conf.d
+# COPY conf /etc/nginx
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+COPY docker-entrypoint.sh generate_config_js.sh /
+RUN chmod +x docker-entrypoint.sh generate_config_js.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
-RUN npm install
-
-RUN chmod +x start.sh
-CMD ["sh", "start.sh"]
